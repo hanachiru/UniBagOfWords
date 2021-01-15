@@ -1,5 +1,5 @@
 # UniBagOfWords
-Unity用の形態素解析器付きBagOfWords変換ライブラリ  
+Unity用の形態素解析器付きBagOfWordsベクトル変換ライブラリ  
 ![Demo](https://user-images.githubusercontent.com/46705432/104748490-27898680-5795-11eb-98e9-92a05e2ec5ac.gif)
 
 ## Dependency
