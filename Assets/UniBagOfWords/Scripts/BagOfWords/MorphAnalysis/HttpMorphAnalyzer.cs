@@ -17,17 +17,17 @@ namespace UniBagOfWords.MorphAnalyzer
         private static HttpClient _client = new HttpClient();
         public string Url { get; }
 
-        public HttpMorphAnalyzer(string url)
+        public HttpMorphAnalyzer(HttpMeCabSetting setting)
         {
-            if (string.IsNullOrEmpty(url)) throw new ArgumentException("urlが正しく設定されていません");
+            if (string.IsNullOrEmpty(setting.Url)) throw new ArgumentException("urlが正しく設定されていません");
 
-            Url = url;
+            Url = setting.Url;
         }
 
         /// <summary>
         /// 形態素解析を行う
         /// </summary>
-        public override async Task<Morpheme[]> AnalyzerAsync(string sentence, CancellationToken token = default)
+        public override async Task<Morpheme[]> AnalyzeAsync(string sentence, CancellationToken token = default)
         {
             var url = $"{Url}?sentence={sentence}";
             Debug.Log(url);
@@ -50,7 +50,7 @@ namespace UniBagOfWords.MorphAnalyzer
     /// </summary>
     /// <remarks>自分の好きなようにカスタマイズしてください</remarks>
     [Serializable]
-    public struct MeCabResopnseToken
+    internal struct MeCabResopnseToken
     {
         public string surface;
         public string pos;

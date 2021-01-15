@@ -21,7 +21,7 @@ namespace UniBagOfWords.Tests
             var dicDir = $"{topDirectoryPath}/Scripts/dic/ipadic";
 
             var setting = new NMeCabSetting(dicDir);
-            _analyzer = new NMeCabMorphAnalyzer(setting.DicDir);
+            _analyzer = new NMeCabMorphAnalyzer(setting);
         }
 
         [OneTimeTearDown]
@@ -36,7 +36,7 @@ namespace UniBagOfWords.Tests
             var cts = new CancellationTokenSource(TimeSpan.FromSeconds(1));
             var sentence = "初めてUnityで形態素解析する";
 
-            var morphemes = Task.Run(async () => await _analyzer.AnalyzerAsync(sentence, cts.Token)).Result;
+            var morphemes = Task.Run(async () => await _analyzer.AnalyzeAsync(sentence, cts.Token)).Result;
 
             var expectedSurfaces = new[] { "初めて", "Unity", "で", "形態素", "解析", "する" };
             var expectedOriginalForm = new[] { "初めて", "*", "で", "形態素", "解析", "する" };

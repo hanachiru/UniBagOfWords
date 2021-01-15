@@ -14,18 +14,18 @@ namespace UniBagOfWords.MorphAnalyzer
         private MeCabIpaDicTagger _tagger;
         public string DicDir { get; }
 
-        public NMeCabMorphAnalyzer(string dicDir)
+        public NMeCabMorphAnalyzer(NMeCabSetting setting)
         {
-            if (string.IsNullOrEmpty(dicDir)) throw new ArgumentException("dicDirが正しく設定されていません");
+            if (string.IsNullOrEmpty(setting.DicDir)) throw new ArgumentException("dicDirが正しく設定されていません");
 
-            DicDir = dicDir;
+            DicDir = setting.DicDir;
             _tagger = MeCabIpaDicTagger.Create(DicDir);
         }
 
         /// <summary>
         /// 形態素解析を行う
         /// </summary>
-        public override Task<Morpheme[]> AnalyzerAsync(string sentence, CancellationToken token = default)
+        public override Task<Morpheme[]> AnalyzeAsync(string sentence, CancellationToken token = default)
             => Task.Run(() => _tagger.Parse(sentence).Select(node => Convert(node)).ToArray(), token);
 
         /// <summary>
