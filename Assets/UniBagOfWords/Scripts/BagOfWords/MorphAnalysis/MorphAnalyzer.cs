@@ -9,14 +9,17 @@ namespace UniBagOfWords.MorphAnalyzer
     /// </summary>
     public abstract class MorphAnalyzer : IDisposable
     {
-        public abstract Task<Morpheme[]> AnalyzerAsync(string sentence, CancellationToken token = default);
+        public abstract Task<Morpheme[]> AnalyzeAsync(string sentence, CancellationToken token = default);
 
         public static MorphAnalyzer Create(MorphAnalysisSetting setting)
         {
             switch (setting.Option)
             {
                 case MorphAnalyzerOption.NMeCab:
-                    return new NMeCabMorphAnalyzer(setting.NMeCabSetting.DicDir);
+                    return new NMeCabMorphAnalyzer(setting.NMeCabSetting);
+
+                case MorphAnalyzerOption.Http:
+                    return new HttpMorphAnalyzer(setting.HttpMeCabSetting);
 
                 default:
                     throw new ArgumentException("setting.Optionが不正な値です");

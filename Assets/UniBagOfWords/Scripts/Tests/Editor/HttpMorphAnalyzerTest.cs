@@ -17,7 +17,7 @@ namespace UniBagOfWords.Tests
         {
             // NOTE : ScriptableObjectよりURLを取得する
             var setting = Resources.Load<MorphAnalysisSetting>("MorphAnalysisSetting");
-            _analyzer = new HttpMorphAnalyzer(setting.HttpMeCabSetting.Url);
+            _analyzer = new HttpMorphAnalyzer(setting.HttpMeCabSetting);
         }
 
         [Ignore("MecabWebAPIは常に使えるわけでないため")]
@@ -27,7 +27,7 @@ namespace UniBagOfWords.Tests
             var cts = new CancellationTokenSource(TimeSpan.FromSeconds(1));
             var sentence = "初めてUnityで形態素解析する";
 
-            var morphemes = Task.Run(async () => await _analyzer.AnalyzerAsync(sentence, cts.Token)).Result;
+            var morphemes = Task.Run(async () => await _analyzer.AnalyzeAsync(sentence, cts.Token)).Result;
 
             var expectedSurfaces = new[] { "初めて", "Unity", "で", "形態素", "解析", "する" };
             var expectedOriginalForm = new[] { "初めて", "Unity", "で", "形態素", "解析", "する" };
