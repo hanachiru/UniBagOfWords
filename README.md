@@ -1,0 +1,2 @@
+# UniBagOfWords
+Unity用のBagOfWordsに変換するライブラリ
