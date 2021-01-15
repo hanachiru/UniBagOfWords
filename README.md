@@ -1,10 +1,10 @@
 # UniBagOfWords
-Unity用の形態素解析器付きBagOfWords変換ライブラリ
+Unity用の形態素解析器付きBagOfWords変換ライブラリ  
 ![Demo](https://user-images.githubusercontent.com/46705432/102689875-ec9f3c00-4244-11eb-9b16-c82edb7565f9.gif)
 
 ## Dependency
 Unity 2019.4.0f1(以上)  
-[Newtonsoft.Json v12.0.3](https://github.com/JamesNK/Newtonsoft.Json/)
+[Newtonsoft.Json v12.0.3](https://github.com/JamesNK/Newtonsoft.Json/)  
 [NMeCab](https://github.com/komutan/NMeCab)
 
 ## Setup
