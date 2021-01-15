@@ -22,7 +22,7 @@ namespace UniBagOfWords
             var vec = new int[_vocabulary.Count];
             foreach(var morpheme in morphemes)
             {
-                var index = _vocabulary.GetId(morpheme.Originalform);
+                var index = _vocabulary.GetId(morpheme.Surface);
 
                 if (index != -1) vec[index]++;
             }
