@@ -1,6 +1,6 @@
 # UniBagOfWords
 Unity用の形態素解析器付きBagOfWords変換ライブラリ  
-![Demo](https://user-images.githubusercontent.com/46705432/102689875-ec9f3c00-4244-11eb-9b16-c82edb7565f9.gif)
+![Demo](https://user-images.githubusercontent.com/46705432/104748490-27898680-5795-11eb-98e9-92a05e2ec5ac.gif)
 
 ## Dependency
 Unity 2019.4.0f1(以上)  
@@ -43,7 +43,8 @@ async void Start()
 ```
 
 ## Note
-UniBagOfWordsフォルダをルートから移動する場合は，UniBagOfWords/Resources/MorphAnalysisSettingにあるNMeCabSetting/DicDirを任意のパスに設定してください。
+UniBagOfWordsフォルダをルートから移動する場合は，UniBagOfWords/Resources/MorphAnalysisSettingにあるNMeCabSetting/DicDirを任意のパスに設定してください。　　
+![Demo](https://user-images.githubusercontent.com/46705432/104748458-1e001e80-5795-11eb-9b26-cf7234ae90b7.png)
 
 ## License
 This software is released under the MIT License, see LICENSE.
