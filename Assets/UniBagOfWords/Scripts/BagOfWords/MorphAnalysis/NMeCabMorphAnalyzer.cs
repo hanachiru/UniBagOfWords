@@ -1,14 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using UnityEngine;
 using NMeCab.Specialized;
-using System;
-using System.Linq;
 
 namespace UniBagOfWords.MorphAnalyzer
 {
+    /// <summary>
+    /// NMeCabを用いた形態素解析器
+    /// </summary>
     public class NMeCabMorphAnalyzer : MorphAnalyzer
     {
         private MeCabIpaDicTagger _tagger;
@@ -32,7 +32,7 @@ namespace UniBagOfWords.MorphAnalyzer
         /// MeCabIpaDicNodeからMorphemeに変換する
         /// </summary>
         private Morpheme Convert(MeCabIpaDicNode node)
-            => new Morpheme(node.Surface, node.PartsOfSpeech, node.OriginalForm, node.Inflection, node.Reading);
+            => new Morpheme(node.Surface, node.PartsOfSpeech, node.OriginalForm, node.Reading);
 
         public override void Dispose()
             => _tagger.Dispose();

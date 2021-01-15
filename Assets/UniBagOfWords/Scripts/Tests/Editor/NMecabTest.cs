@@ -3,7 +3,7 @@ using System.Linq;
 using NMeCab.Specialized;
 using NUnit.Framework;
 
-namespace Tests
+namespace UniBagOfWords.Tests
 {
     public class NMecabTest
     {

@@ -10,15 +10,13 @@ namespace UniBagOfWords.MorphAnalyzer
         public string Surface { get; }
         public string Pos { get; }
         public string Originalform { get; }
-        public string Inflection { get; }
         public string Reading { get; }
 
-        public Morpheme(string surface, string pos, string originalform, string infleciton, string reading)
+        public Morpheme(string surface, string pos, string originalform, string reading)
         {
             Surface = surface;
             Pos = pos;
             Originalform = originalform;
-            Inflection = infleciton;
             Reading = reading;
         }
 

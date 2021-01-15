@@ -16,4 +16,4 @@ MonoBehaviour:
   _nMeCabSetting:
     dicDir: Assets/UniBagOfWords/Scripts/dic/ipadic
   _httpMeCabSetting:
-    url: 
+    url: http://18.183.211.87/mecab

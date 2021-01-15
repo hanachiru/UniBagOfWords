@@ -4,6 +4,9 @@ using System.Threading.Tasks;
 
 namespace UniBagOfWords.MorphAnalyzer
 {
+    /// <summary>
+    /// 形態素解析器
+    /// </summary>
     public abstract class MorphAnalyzer : IDisposable
     {
         public abstract Task<Morpheme[]> AnalyzerAsync(string sentence, CancellationToken token = default);
