@@ -44,7 +44,7 @@ async void Start()
 
 ## Note
 UniBagOfWordsフォルダをルートから移動する場合は，UniBagOfWords/Resources/MorphAnalysisSettingにあるNMeCabSetting/DicDirを任意のパスに設定してください。　　
-![Demo](https://user-images.githubusercontent.com/46705432/104748458-1e001e80-5795-11eb-9b26-cf7234ae90b7.png)
+![Demo](https://user-images.githubusercontent.com/46705432/104748864-82bb7900-5795-11eb-9322-9d8a70f29537.png)
 
 ## License
 This software is released under the MIT License, see LICENSE.
