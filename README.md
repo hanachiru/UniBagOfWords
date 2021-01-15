@@ -38,7 +38,7 @@ async void Start()
     // 1,1,1,1,0,1,1,0,1
     Debug.Log(string.Join(",", bowVec));
 
-    // 単語辞書の単語とIDの対応
+    // 単語辞書の単語と順番
     // 私,は,ラーメン,が,好き,です,。,餃子,嫌い
     Debug.Log(string.Join(",", vocabulary.Words));
 }
