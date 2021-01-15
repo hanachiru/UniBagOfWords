@@ -1,2 +1,2 @@
 # UniBagOfWords
-Unity用のBagOfWordsに変換するライブラリ
+Unity用の形態素解析器付きBagOfWords変換ライブラリ
