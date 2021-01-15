@@ -29,5 +29,13 @@ namespace UniBagOfWords
 
             return vec;
         }
+
+        /// <summary>
+        /// ConvertAsyncまたはVocabulary.Createを別スレッドから呼ぶときは，必ず一度メインスレッドによりこのメソッドを呼んだください
+        /// メインスレッドのみで作業する場合は必要ありません
+        /// </summary>
+        /// <remarks>初回時に設定ファイルをResources.Loadで読み込むため</remarks>
+        public static void InitAnalyzer()
+            => MorphAnalyzerClient.Init();
     }
 }
