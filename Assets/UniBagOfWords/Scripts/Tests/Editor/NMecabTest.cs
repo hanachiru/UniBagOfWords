@@ -14,7 +14,7 @@ namespace Tests
         {
             // NOTE : フォルダ移動の可能性があるので，"UniBagOfWords"のパスから見つける
             var topDirectoryPath = Directory.GetDirectories("Assets", "*", SearchOption.AllDirectories)
-                .FirstOrDefault(path => Path.GetFileName(path) == "UniBagOfWards");
+                .FirstOrDefault(path => Path.GetFileName(path) == "UniBagOfWords");
             var dicDir = $"{topDirectoryPath}/Scripts/dic/ipadic";
 
             _tagger = MeCabIpaDicTagger.Create(dicDir);
