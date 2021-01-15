@@ -8,7 +8,7 @@ Unity 2019.4.0f1(以上)
 [NMeCab v0.10.1](https://github.com/komutan/NMeCab)
 
 ## Setup
-[Releaseページ](https://github.com/hanachiru/UniBagOfWords/releases/tag/v1.0.0)から`.unitypackage`をインストールする
+[Releaseページ](https://github.com/hanachiru/UniBagOfWords/releases/)から`.unitypackage`をインストールする
 
 ## Usage
 Bog of Wordsについては[こちらの記事](https://qiita.com/kazukiii/items/d717add45bbc76a71430)が参考になると思います。
