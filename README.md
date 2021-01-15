@@ -41,10 +41,14 @@ async void Start()
     Debug.Log(string.Join(",", vocabraryu.Words));
 }
 ```
+## ClassDiagram
+![ClassDiagram](https://user-images.githubusercontent.com/46705432/104749276-f5c4ef80-5795-11eb-8d19-067ba16dc6cc.png)
 
 ## Note
-UniBagOfWordsフォルダをルートから移動する場合は，UniBagOfWords/Resources/MorphAnalysisSettingにあるNMeCabSetting/DicDirを任意のパスに設定してください。　　
-![Demo](https://user-images.githubusercontent.com/46705432/104748864-82bb7900-5795-11eb-9322-9d8a70f29537.png)
+UniBagOfWordsフォルダをルートから移動する場合は，UniBagOfWords/Resources/MorphAnalysisSettingにあるNMeCabSetting/DicDirを任意のパスに設定してください。　
+
+
+![Note](https://user-images.githubusercontent.com/46705432/104748864-82bb7900-5795-11eb-9322-9d8a70f29537.png)
 
 ## License
 This software is released under the MIT License, see LICENSE.
