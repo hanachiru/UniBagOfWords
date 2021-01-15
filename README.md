@@ -5,12 +5,14 @@ Unity用の形態素解析器付きBagOfWordsベクトル変換ライブラリ
 ## Dependency
 Unity 2019.4.0f1(以上)  
 [Newtonsoft.Json v12.0.3](https://github.com/JamesNK/Newtonsoft.Json/)  
-[NMeCab](https://github.com/komutan/NMeCab)
+[NMeCab v0.10.1](https://github.com/komutan/NMeCab)
 
 ## Setup
 [Releaseページ]()から`.unitypackage`をインストールする
 
 ## Usage
+Bog of Wordsについては[こちらの記事](https://qiita.com/kazukiii/items/d717add45bbc76a71430)が参考になると思います。
+
 ```cs:sample.cs
 // 使用例
 async void Start()
@@ -24,10 +26,10 @@ async void Start()
     };
 
     // 1. まずは単語辞書を作る必要があります
-    Vocabulary vocabraryu = await Vocabulary.Create(sentences);
+    Vocabulary vocabulary = await Vocabulary.Create(sentences);
 
     // 2. 先程生成した単語辞書を使ったBoWベクトル変換器を作ります
-    BagOfWordsConverter converter = new BagOfWordsConverter(vocabraryu);
+    BagOfWordsConverter converter = new BagOfWordsConverter(vocabulary);
 
     // 3. 好きな文章をBoW変換します
     int[] bowVec = await converter.ConvertAsync("私はラーメンが嫌いです。");
@@ -38,7 +40,7 @@ async void Start()
 
     // 単語辞書の単語とIDの対応
     // 私,は,ラーメン,が,好き,です,。,餃子,嫌い
-    Debug.Log(string.Join(",", vocabraryu.Words));
+    Debug.Log(string.Join(",", vocabulary.Words));
 }
 ```
 ## ClassDiagram
