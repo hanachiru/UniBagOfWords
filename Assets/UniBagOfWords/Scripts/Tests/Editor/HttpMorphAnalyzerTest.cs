@@ -21,7 +21,6 @@ namespace UniBagOfWords.Tests
         }
 
         [Ignore("MecabWebAPIは常に使えるわけでないため")]
-        [Test]
         public void HttpMorphAnalyzerTestSimplePasses()
         {
             var cts = new CancellationTokenSource(TimeSpan.FromSeconds(1));

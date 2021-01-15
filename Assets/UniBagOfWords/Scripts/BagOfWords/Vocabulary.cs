@@ -15,7 +15,7 @@ namespace UniBagOfWords
         public Vocabulary(IEnumerable<Morpheme> morphemes)
         {
             // 重複のないコレクション作成
-            var vocabulary = new HashSet<string>(morphemes.Select(word => word.Originalform));
+            var vocabulary = new HashSet<string>(morphemes.Select(word => word.Surface));
             _words = vocabulary.ToList();
         }
 
