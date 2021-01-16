@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -14,6 +15,8 @@ namespace UniBagOfWords
 
         public Vocabulary(IEnumerable<Morpheme> morphemes)
         {
+            if (morphemes == null) throw new ArgumentException("morphemesがnullになっています。");
+
             // 重複のないコレクション作成
             var vocabulary = new HashSet<string>(morphemes.Select(word => word.Surface));
             _words = vocabulary.ToList();
@@ -30,6 +33,8 @@ namespace UniBagOfWords
         /// </summary>
         public static async Task<Vocabulary> Create(IEnumerable<string> sentences, CancellationToken token = default)
         {
+            if (sentences == null) throw new ArgumentException("sentencesがnullになっています。");
+
             var morphemes = new List<Morpheme>();
             foreach(var sentence in sentences)
             {

@@ -26,8 +26,10 @@ namespace UniBagOfWords.MorphAnalyzer
         /// 形態素解析を行う
         /// </summary>
         public override Task<Morpheme[]> AnalyzeAsync(string sentence, CancellationToken token = default)
-            => Task.Run(() => _tagger.Parse(sentence).Select(node => Convert(node)).ToArray(), token);
-
+        {
+            if (string.IsNullOrEmpty(sentence)) throw new ArgumentException("sentenceがNullもしくはemptyになっています。");
+            return Task.Run(() => _tagger.Parse(sentence).Select(node => Convert(node)).ToArray(), token);
+        }
         /// <summary>
         /// MeCabIpaDicNodeからMorphemeに変換する
         /// </summary>

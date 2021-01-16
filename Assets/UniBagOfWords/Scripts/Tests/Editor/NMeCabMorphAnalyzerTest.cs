@@ -48,5 +48,21 @@ namespace UniBagOfWords.Tests
             CollectionAssert.AreEqual(expectedPartsOfSpeech, morphemes.Select(t => t.Pos).ToArray());
             CollectionAssert.AreEqual(expectedReading, morphemes.Select(t => t.Reading).ToArray());
         }
+
+        [Test]
+        public void AnalyzeErrorCase()
+        {
+            var cts = new CancellationTokenSource(TimeSpan.FromSeconds(1));
+
+            try
+            {
+                var morphemes = Task.Run(async () => await _analyzer.AnalyzeAsync(null, cts.Token)).Result;
+                Assert.Fail();
+            }
+            catch (AggregateException)
+            {
+                Assert.Pass();
+            }
+        }
     }
 }

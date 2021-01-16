@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace UniBagOfWords
@@ -9,6 +10,8 @@ namespace UniBagOfWords
         
         public BagOfWordsConverter(Vocabulary vocabulary)
         {
+            if (vocabulary == null) throw new ArgumentException("vocabularyがNullになっています。");
+
             _vocabulary = vocabulary;
         }
 
@@ -17,6 +20,8 @@ namespace UniBagOfWords
         /// </summary>
         public async Task<int[]> ConvertAsync(string sentence, CancellationToken token = default)
         {
+            if (string.IsNullOrEmpty(sentence)) throw new ArgumentException("sentenceがNullもしくはEmptyになっています");
+
             var morphemes = await MorphAnalyzerClient.AnalyzeAsync(sentence, token);
 
             var vec = new int[_vocabulary.Count];
@@ -29,13 +34,5 @@ namespace UniBagOfWords
 
             return vec;
         }
-
-        /// <summary>
-        /// ConvertAsyncまたはVocabulary.Createを別スレッドから呼ぶときは，必ず一度メインスレッドによりこのメソッドを呼んだください
-        /// メインスレッドのみで作業する場合は必要ありません
-        /// </summary>
-        /// <remarks>初回時に設定ファイルをResources.Loadで読み込むため</remarks>
-        public static void InitAnalyzer()
-            => MorphAnalyzerClient.Init();
     }
 }
