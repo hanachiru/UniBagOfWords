@@ -66,7 +66,7 @@ private async void Start()
     BagOfWordsConverter converter = new BagOfWordsConverter(vocabulary);
     int[] bowVec = await converter.ConvertAsync("私は嫌い。", cts.Token);
 
-    // 1,1,1,1,0,1,1,0,1
+    // 1,1,0,0,1,0,1
     Debug.Log(string.Join(",", bowVec));
 }
 ```
