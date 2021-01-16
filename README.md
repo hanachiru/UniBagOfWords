@@ -82,7 +82,7 @@ UniBagOfWordsフォルダをルートから移動する場合は`，UniBagOfWord
   
 
 またMorphAnalyzerClientの静的コンストラクタで`Resources.Load`により設定ファイルを探しています。  
-`Vocabulary.Create`, `BagOfWordsConverter`, `MorphAnalyzerClient.AnalyzeAsync`のいずれかを初回も別スレッドにより呼び出す場合は、あらかじめメインスレッドにより`MorphAnalyzerClient.Init()`を呼び出してください。
+`Vocabulary.Create`, `BagOfWordsConverter.ConvertAsync`, `MorphAnalyzerClient.AnalyzeAsync`のいずれかを初回も別スレッドにより呼び出す場合は、あらかじめメインスレッドにより`MorphAnalyzerClient.Init()`を呼び出してください。
 
 ## License
 This software is released under the MIT License, see LICENSE.
