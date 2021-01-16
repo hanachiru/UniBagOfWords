@@ -13,8 +13,8 @@ Unity 2019.4.0f1(以上)
 ## Usage
 Bog of Wordsについては[こちらの記事](https://qiita.com/kazukiii/items/d717add45bbc76a71430)が参考になると思います。
 
-```cs:sample.cs
-// 使用例
+```cs:sample1.cs
+// 使用例1
 async void Start()
 {
     // テキストデータセット
@@ -41,6 +41,33 @@ async void Start()
     // 単語辞書の単語と順番
     // 私,は,ラーメン,が,好き,です,。,餃子,嫌い
     Debug.Log(string.Join(",", vocabulary.Words));
+}
+```
+  
+```cs:sample2.cs
+// 使用例2
+private async void Start()
+{
+    // キャンセル用のトークン生成して利用することもできます
+    CancellationTokenSource cts = new CancellationTokenSource();
+
+    string sentene = "私はラーメンが嫌いです。";
+
+    // 形態素解析も行えます
+    Morpheme[] morphemes = await MorphAnalyzerClient.AnalyzeAsync(sentene, cts.Token);
+
+    // 私,は,ラーメン,が,嫌い,です,。
+    Debug.Log(string.Join(",", morphemes.Select(morpheme => morpheme.Surface).ToArray()));
+
+    // 自身で作成した形態素のコレクションを用いて，Vocabularyを作成することもできます
+    Vocabulary vocabulary = new Vocabulary(morphemes);
+
+    // 作成したVocabularyでBoWベクトルに変換します
+    BagOfWordsConverter converter = new BagOfWordsConverter(vocabulary);
+    int[] bowVec = await converter.ConvertAsync("私は嫌い。", cts.Token);
+
+    // 1,1,1,1,0,1,1,0,1
+    Debug.Log(string.Join(",", bowVec));
 }
 ```
 ## ClassDiagram
