@@ -79,6 +79,11 @@ UniBagOfWordsフォルダをルートから移動する場合は，UniBagOfWords
 
 ![Note](https://user-images.githubusercontent.com/46705432/104748864-82bb7900-5795-11eb-9322-9d8a70f29537.png)
 
+  
+
+またMorphAnalyzerClientの静的コンストラクタでResources.Loadにより設定ファイルを探しています。  
+`Vocabulary.Create`, `BagOfWordsConverter`, `MorphAnalyzerClient.AnalyzeAsync`のいずれかを初回も別スレッドにより呼び出す場合は、あらかじめメインスレッドにより`MorphAnalyzerClient.Init()`を呼び出してください。
+
 ## License
 This software is released under the MIT License, see LICENSE.
 
