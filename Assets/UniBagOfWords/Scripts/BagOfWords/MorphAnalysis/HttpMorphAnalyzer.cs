@@ -29,8 +29,10 @@ namespace UniBagOfWords.MorphAnalyzer
         /// </summary>
         public override async Task<Morpheme[]> AnalyzeAsync(string sentence, CancellationToken token = default)
         {
+            if (string.IsNullOrEmpty(sentence)) throw new ArgumentException("sentenceがNullもしくはemptyになっています。");
+
             var url = $"{Url}?sentence={sentence}";
-            Debug.Log(url);
+
             var response = await _client.GetAsync(url, token);
 
             if (!response.IsSuccessStatusCode) throw new HttpRequestException();

@@ -14,6 +14,8 @@ namespace UniBagOfWords.MorphAnalyzer
 
         public Morpheme(string surface, string pos, string originalform, string reading)
         {
+            if (surface == null) throw new ArgumentNullException("surfaceはnullにできません。");
+
             Surface = surface;
             Pos = pos;
             Originalform = originalform;
