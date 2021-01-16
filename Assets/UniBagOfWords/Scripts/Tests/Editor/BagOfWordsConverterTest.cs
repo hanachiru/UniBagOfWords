@@ -23,7 +23,7 @@ namespace UniBagOfWords.Tests
                 "私はラーメンが嫌いです。"
             };
 
-            BagOfWordsConverter.InitAnalyzer();
+            MorphAnalyzerClient.Init();
             var vocabulary = Task.Run(async () => await Vocabulary.Create(sentences, cts.Token)).Result;
 
             var expectedWords = new[] { "私", "は", "ラーメン", "が", "好き", "です", "。", "餃子", "嫌い" };
@@ -86,7 +86,7 @@ namespace UniBagOfWords.Tests
                 "私はラーメンが嫌いです。"
             };
 
-            BagOfWordsConverter.InitAnalyzer();
+            MorphAnalyzerClient.Init();
             var vocabulary = Task.Run(async () => await Vocabulary.Create(sentences, cts.Token)).Result;
             var converter = new BagOfWordsConverter(vocabulary);
 
