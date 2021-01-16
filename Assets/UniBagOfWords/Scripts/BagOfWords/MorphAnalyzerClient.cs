@@ -8,7 +8,7 @@ namespace UniBagOfWords
     /// <summary>
     /// 形態素解析器を使うクライアント
     /// </summary>
-    internal static class MorphAnalyzerClient
+    public static class MorphAnalyzerClient
     {
         private static MorphAnalyzer.MorphAnalyzer _analyzer;
 
@@ -19,9 +19,11 @@ namespace UniBagOfWords
         }
 
         /// <summary>
-        /// 初期化
+        /// 静的コンストラクタを強制的に呼ぶ
         /// </summary>
-        /// <remarks>Resources.Loadで設定ファイルを読み込むので，必ずメインスレッドにより一度呼び出してください</remarks>
+        /// <remarks>
+        /// 初回時に設定ファイルをResources.Loadで読み込むため
+        /// </remarks>
         public static void Init() { }
 
         /// <summary>
