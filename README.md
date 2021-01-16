@@ -74,14 +74,14 @@ private async void Start()
 ![ClassDiagram](https://user-images.githubusercontent.com/46705432/104749276-f5c4ef80-5795-11eb-8d19-067ba16dc6cc.png)
 
 ## Note
-UniBagOfWordsフォルダをルートから移動する場合は，UniBagOfWords/Resources/MorphAnalysisSettingにあるNMeCabSetting/DicDirを任意のパスに設定してください。　
+UniBagOfWordsフォルダをルートから移動する場合は`，UniBagOfWords/Resources/MorphAnalysisSetting`にある`NMeCabSetting/DicDir`を任意のパスに設定してください。　
 
 
 ![Note](https://user-images.githubusercontent.com/46705432/104748864-82bb7900-5795-11eb-9322-9d8a70f29537.png)
 
   
 
-またMorphAnalyzerClientの静的コンストラクタでResources.Loadにより設定ファイルを探しています。  
+またMorphAnalyzerClientの静的コンストラクタで`Resources.Load`により設定ファイルを探しています。  
 `Vocabulary.Create`, `BagOfWordsConverter`, `MorphAnalyzerClient.AnalyzeAsync`のいずれかを初回も別スレッドにより呼び出す場合は、あらかじめメインスレッドにより`MorphAnalyzerClient.Init()`を呼び出してください。
 
 ## License
