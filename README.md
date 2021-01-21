@@ -11,7 +11,7 @@ Unity 2019.4.0f1(以上)
 [Releaseページ](https://github.com/hanachiru/UniBagOfWords/releases/)から`.unitypackage`をインストールする
 
 ## Usage
-Bog of Wordsについては[こちらの記事](https://qiita.com/kazukiii/items/d717add45bbc76a71430)が参考になると思います。
+このライブラリについての[記事](https://www.hanachiru-blog.com/entry/2021/01/25/180000)を書きましたので、そちらも参照してみてください。
   
 ![Bag of Wordsの概要](https://user-images.githubusercontent.com/46705432/105355933-1bd70d80-5c36-11eb-995f-93a8114f26d8.png)
   
