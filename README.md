@@ -59,7 +59,7 @@ private async void Start()
     // 私,は,ラーメン,が,嫌い,です,。
     Debug.Log(string.Join(",", morphemes.Select(morpheme => morpheme.Surface).ToArray()));
 
-    // 自身で作成した形態素のコレクションを用いて，Vocabularyを作成することもできます
+    // 自身で作成した形態素のコレクションを用いて，Vocabularyを作成することもできます(特定の品詞に限定したりはmorphemesに対して処理をすれば良い)
     Vocabulary vocabulary = new Vocabulary(morphemes);
 
     // 作成したVocabularyでBoWベクトルに変換します
