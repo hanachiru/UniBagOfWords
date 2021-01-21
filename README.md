@@ -12,7 +12,9 @@ Unity 2019.4.0f1(以上)
 
 ## Usage
 Bog of Wordsについては[こちらの記事](https://qiita.com/kazukiii/items/d717add45bbc76a71430)が参考になると思います。
-
+  
+![Bag of Wordsの概要](https://user-images.githubusercontent.com/46705432/105355933-1bd70d80-5c36-11eb-995f-93a8114f26d8.png)
+  
 ```cs:sample1.cs
 // 使用例1
 async void Start()
