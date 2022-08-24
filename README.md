@@ -3,7 +3,7 @@ Unity用の形態素解析器付きBagOfWordsベクトル変換ライブラリ�
 ![Demo](https://user-images.githubusercontent.com/46705432/104748490-27898680-5795-11eb-98e9-92a05e2ec5ac.gif)
 
 ## Dependency
-Unity 2019.4.0f1 or later
+Unity 2019.4.0f1 or later  
 [Newtonsoft.Json v12.0.3](https://github.com/JamesNK/Newtonsoft.Json/)  
 [NMeCab v0.10.1](https://github.com/komutan/NMeCab)
 
