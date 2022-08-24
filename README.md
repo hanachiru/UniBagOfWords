@@ -1,14 +1,14 @@
 # UniBagOfWords
-Unity用の形態素解析器付きBagOfWordsベクトル変換ライブラリ  
+Unity用の形態素解析器付きBagOfWordsベクトル変換ライブラリです。
 ![Demo](https://user-images.githubusercontent.com/46705432/104748490-27898680-5795-11eb-98e9-92a05e2ec5ac.gif)
 
 ## Dependency
-Unity 2019.4.0f1(以上)  
+Unity 2019.4.0f1 or later
 [Newtonsoft.Json v12.0.3](https://github.com/JamesNK/Newtonsoft.Json/)  
 [NMeCab v0.10.1](https://github.com/komutan/NMeCab)
 
 ## Setup
-[Releaseページ](https://github.com/hanachiru/UniBagOfWords/releases/)から`.unitypackage`をインストールする
+[Releaseページ](https://github.com/hanachiru/UniBagOfWords/releases/)から`.unitypackage`をインストールしてください。
 
 ## Usage
 このライブラリについての[記事](https://www.hanachiru-blog.com/entry/2021/01/25/180000)を書きましたので、そちらも参照してみてください。
